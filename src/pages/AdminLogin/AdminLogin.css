@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.admin-login-card{
+    display: flex;
+    width: 432px;
+    height: 400px;
+    border-radius: 10px;
+    border:2px solid #E897AA;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.admin-login-title{
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.admin-login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label{
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-input{
+    padding: 12px 16px;
+    border: 2px solid #e1e1e1;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    outline: none;
+    width: 100%;
+}
+
+.form-input:focus{
+    border-color: #E897AA;
+}
+
+.form-input:disabled{
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.form-input::placeholder{
+    color: #999;
+}
+
+.error-message{
+    color: #dc3545;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+}
+
+.login-button{
+    background: #E897AA;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-button:hover:not(:disabled){
+    background: #d47b90;
+}
+
+.login-button:disabled{
+    background: #f0b6c5;
+    cursor: not-allowed;
+}
+
+.forgot-password-link{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-link{
+    color: #E897AA;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover{
+    color: #d47b90;
+    text-decoration: underline;
+}
