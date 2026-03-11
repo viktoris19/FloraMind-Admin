@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AdminLogin from './pages/AdminLogin/AdminLogin';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Orders from './pages/Orders/Orders';
 import './App.css';
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
           <Route 
             path="/dashboard" 
             element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} 
+          />
+
+          <Route 
+            path="/orders" 
+            element={isAuthenticated ? <Orders /> : <Navigate to="/login" />} 
           />
           
           {/* Перенаправление с корневого пути */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AdminLogin.css';
 
 const AdminLogin = () => {
@@ -6,6 +7,8 @@ const AdminLogin = () => {
     const [password,setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error,setError] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +24,7 @@ const AdminLogin = () => {
         setTimeout(() => {
             if (email === 'admin@example.com' && password === 'admin123') {
                 localStorage.setItem('isAuthenticated', 'true');
-                navigate('/Dashboard'); // ПЕРЕХОД НА DASHBOARD
+                navigate('/Dashboard');
             } else {
                 setError('Неверный email или пароль');
                 setIsLoading(false);

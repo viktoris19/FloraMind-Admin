@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
 const Dashboard = () => {
+
+    const navigate = useNavigate();
 
     const stats = [
         { title: 'Новых заказов', value: 5 },
@@ -81,11 +84,21 @@ const Dashboard = () => {
                 <section className='quick-actions'>
                     <h2 className='section-title'>Быстрые действия</h2>
                     <div className='actions-grid'>
-                        {quickActions.map((action,index) => (
-                            <button key={index} className='action-button'>
-                                {action}
-                            </button>
-                        ))} 
+                            <button className='action-button'>
+                                + Новый заказ
+                            </button> 
+                            <button className='action-button'>
+                                Новый клиент
+                            </button> 
+                            <button className='action-button' onClick={() => navigate('/Orders')}>
+                                Все заказы
+                            </button> 
+                            <button className='action-button'>
+                                Параметры
+                            </button> 
+                            <button className='action-button'>
+                                Поддержка
+                            </button> 
                     </div>
                 </section>
                 <h2 className='section-title'>Последние заказы</h2>
@@ -97,7 +110,7 @@ const Dashboard = () => {
                                 <th>ID заказа</th>
                                 <th>Дата</th>
                                 <th>Клиент</th>
-                                <th>Тип</th>
+                                <th>Способ получения</th>
                                 <th>Описание</th>
                                 <th>Сумма</th>
                                 <th>Статус</th>
@@ -135,7 +148,7 @@ const Dashboard = () => {
                         </table>
                     </div>
                     <div className='view-all-orders'>
-                        <button className='view-all-button'>Все заказы</button>
+                        <button className='view-all-button' onClick={() => navigate('/Orders')}>Все заказы</button>
                     </div>
                 </section>
             </div>
