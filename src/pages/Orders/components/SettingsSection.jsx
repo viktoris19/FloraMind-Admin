@@ -1,4 +1,5 @@
 import React from 'react';
+import './SettingsSection.css'
 
 const SettingsSection = ({ title, items, onEdit, isTwoColumns = false }) => {
     if (isTwoColumns) {

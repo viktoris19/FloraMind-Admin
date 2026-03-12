@@ -1,7 +1,24 @@
 import React from 'react';
+import './ClientModal.css';
+import '../Orders.css';
 
-const ClientModal = ({ client, onClose }) => {
+const ClientModal = ({ client, onClose, onEdit }) => {
     if (!client) return null;
+
+    const handleOverlayClick = (e) => {
+        handleClose(e);
+    };
+
+    const handleContentClick = (e) => {
+        e.stopPropagation();
+    };
+
+    const handleEdit = () => {
+        if (onEdit) {
+            onEdit(client);
+        }
+    };
+
 
     return (
         <div className='modal-overlay' onClick={onClose}>
@@ -53,7 +70,7 @@ const ClientModal = ({ client, onClose }) => {
                 </div>
 
                 <div className='modal-footer'>
-                    <button className='update-button'>Редактировать</button>
+                    <button className='update-button' onClick={handleEdit}>Редактировать</button>
                     <button className='chat-button'>В чат с флористом</button>
                 </div>
             </div>

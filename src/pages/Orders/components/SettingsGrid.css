@@ -1,0 +1,41 @@
+@import '../variables.css';
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+.settings-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.add-button {
+    padding: 12px 40px;
+    background-color: var(--primary-pink);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.add-button:hover {
+    background-color: var(--primary-pink-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-pink);
+}
+
+@media (max-width: 768px) {
+    .settings-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './ClientsTable.css'
 
 const ClientsTable = ({ clients, onClientClick }) => {
     return (

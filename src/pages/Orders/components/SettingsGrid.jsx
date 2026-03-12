@@ -1,5 +1,6 @@
 import React from 'react';
 import SettingsSection from './SettingsSection';
+import './SettingsGrid.css'
 
 const SettingsGrid = ({ groups, onEditGroup }) => {
     return (

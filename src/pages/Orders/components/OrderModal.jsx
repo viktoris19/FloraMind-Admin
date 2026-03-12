@@ -1,7 +1,24 @@
 import React from 'react';
+import './OrderModal.css';
+import '../Orders.css';
 
-const OrderModal = ({ order, onClose }) => {
+const OrderModal = ({ order, onClose, onEdit }) => {
     if (!order) return null;
+
+    const handleOverlayClick = (e) => {
+        handleClose(e);
+    };
+
+    const handleContentClick = (e) => {
+        e.stopPropagation();
+    };
+
+    const handleEdit = () => {
+        if (onEdit) {
+            onEdit(order);
+        }
+    };
+    
 
     return (
         <div className='modal-overlay' onClick={onClose}>
@@ -62,7 +79,7 @@ const OrderModal = ({ order, onClose }) => {
                 </div>
 
                 <div className='modal-footer'>
-                    <button className='update-button'>Редактировать</button>
+                    <button className='update-button' onClick={handleEdit}>Редактировать</button>
                     <button className='chat-button'>В чат с флористом</button>
                 </div>
             </div>

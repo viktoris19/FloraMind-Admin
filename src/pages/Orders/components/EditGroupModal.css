@@ -1,0 +1,155 @@
+@import '../variables.css';
+
+.edit-modal {
+    max-width: 500px;
+}
+
+.edit-group-section {
+    padding: 10px 0;
+}
+
+.edit-group-section h3 {
+    color: var(--text-primary);
+    font-size: 18px;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.group-name {
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.edit-values h4 {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: var(--spacing-md);
+}
+
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.value-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    transition: all var(--transition-fast);
+}
+
+.value-input:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 2px rgba(232, 151, 170, 0.1);
+}
+
+.remove-value-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.remove-value-btn:hover {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.add-value-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px dashed var(--primary-pink);
+    border-radius: var(--radius-md);
+    color: var(--primary-pink);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.add-value-btn:hover {
+    background-color: var(--bg-hover);
+    border-style: solid;
+}
+
+.edit-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+}
+
+.cancel-btn {
+    padding: 10px 24px;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.cancel-btn:hover {
+    border-color: #999;
+    color: var(--text-primary);
+}
+
+.save-btn {
+    padding: 10px 24px;
+    background-color: var(--primary-pink);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.save-btn:hover {
+    background-color: var(--primary-pink-hover);
+}
+
+.values-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.values-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.values-list::-webkit-scrollbar-thumb {
+    background: var(--primary-pink);
+    border-radius: 10px;
+}
+
+.values-list::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-pink-hover);
+}

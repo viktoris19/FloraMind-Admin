@@ -1,0 +1,129 @@
+@import '../variables.css';
+
+.edit-client-modal {
+    max-width: 550px;
+}
+
+.edit-client-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.edit-section {
+    background-color: var(--bg-light);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+}
+
+.edit-section h3 {
+    color: var(--primary-pink);
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.edit-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.edit-field label {
+    min-width: 100px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.edit-field input,
+.edit-field select {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    transition: all var(--transition-fast);
+    background-color: white;
+}
+
+.edit-field input:focus,
+.edit-field select:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 2px rgba(232, 151, 170, 0.1);
+}
+
+.edit-field input:hover,
+.edit-field select:hover {
+    border-color: var(--primary-pink);
+}
+
+.client-id-header {
+    color: var(--primary-pink);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.edit-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+}
+
+.cancel-btn {
+    padding: 10px 24px;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.cancel-btn:hover {
+    border-color: #999;
+    color: var(--text-primary);
+}
+
+.save-btn {
+    padding: 10px 24px;
+    background-color: var(--primary-pink);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.save-btn:hover {
+    background-color: var(--primary-pink-hover);
+}
+
+@media (max-width: 768px) {
+    .edit-field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .edit-field label {
+        min-width: auto;
+    }
+    
+    .edit-field input,
+    .edit-field select {
+        width: 100%;
+    }
+}

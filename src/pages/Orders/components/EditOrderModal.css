@@ -1,0 +1,90 @@
+@import '../variables.css';
+
+.edit-order-modal {
+    max-width: 700px;
+}
+
+.edit-order-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.edit-section {
+    background-color: var(--bg-light);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+}
+
+.edit-section h3 {
+    color: var(--primary-pink);
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.edit-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.edit-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-field label {
+    min-width: 100px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.edit-field input,
+.edit-field select {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    transition: all var(--transition-fast);
+    background-color: white;
+}
+
+.edit-field input:focus,
+.edit-field select:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 2px rgba(232, 151, 170, 0.1);
+}
+
+.edit-field input:hover,
+.edit-field select:hover {
+    border-color: var(--primary-pink);
+}
+
+.edit-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .edit-field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .edit-field label {
+        min-width: auto;
+    }
+    
+    .edit-field input,
+    .edit-field select {
+        width: 100%;
+    }
+}

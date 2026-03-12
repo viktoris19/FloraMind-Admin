@@ -1,0 +1,64 @@
+:root {
+    /* Цветовая палитра */
+    --primary-pink: #E897AA;
+    --primary-pink-hover: #d47b90;
+    --primary-pink-light: #FFF4F7;
+    --primary-pink-soft: #f8f9fa;
+    
+    /* Текст */
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-muted: #999;
+    --text-light: #7c7c7c;
+    
+    /* Границы */
+    --border-color: #e0e0e0;
+    --border-dark: #d7d7d7;
+    --border-light: #b8b8b8;
+    
+    /* Фоны */
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-hover: #fff5f7;
+    
+    /* Тени */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --shadow-pink: 0 4px 12px rgba(232, 151, 170, 0.3);
+    
+    /* Анимации */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    
+    /* Скругления */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* Отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+    --spacing-xxl: 30px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -12,12 +12,34 @@ const Dashboard = () => {
         { title: 'Доставлено', value: 12},
     ];
 
+    const handleQuickAction = (action) => {
+    switch(action) {
+        case 'Новый заказ':
+            navigate('/orders?tab=orders&action=new');
+            break;
+        case 'Новый клиент':
+            navigate('/orders?tab=clients&action=new'); 
+            break;
+        case 'Все заказы':
+            navigate('/orders?tab=orders');
+            break;
+        case 'Параметры':
+            navigate('/orders?tab=settings'); 
+            break;
+        case 'Поддержка':
+            window.open('https://t.me/florabot', '_blank');
+            break;
+        default:
+            navigate('/orders');
+    }
+};
+
     const quickActions = [
-        '+ Новый заказ',
-        'Новый клиент',
-        'Все заказы',
-        'Параметры',
-        'Поддержка'
+        { name: 'Новый заказ'},
+        { name: 'Новый клиент'},
+        { name: 'Все заказы'},
+        { name: 'Параметры' },
+        { name: 'Поддержка'}
     ];
 
     const orders = [
@@ -83,22 +105,16 @@ const Dashboard = () => {
                 </div>
                 <section className='quick-actions'>
                     <h2 className='section-title'>Быстрые действия</h2>
-                    <div className='actions-grid'>
-                            <button className='action-button'>
-                                + Новый заказ
-                            </button> 
-                            <button className='action-button'>
-                                Новый клиент
-                            </button> 
-                            <button className='action-button' onClick={() => navigate('/Orders')}>
-                                Все заказы
-                            </button> 
-                            <button className='action-button' onCkick={() => navigate('/Orders')}>
-                                Параметры
-                            </button> 
-                            <button className='action-button'>
-                                Поддержка
-                            </button> 
+                    <div className="actions-grid">
+                    {quickActions.map((action, index) => (
+                        <button 
+                            key={index} 
+                            className="action-button"
+                            onClick={() => handleQuickAction(action.name)}
+                        >
+                            {action.name}
+                        </button>
+                    ))}
                     </div>
                 </section>
                 <h2 className='section-title'>Последние заказы</h2>
