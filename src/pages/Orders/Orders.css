@@ -384,6 +384,311 @@
     box-shadow: 0 4px 12px rgba(232, 151, 170, 0.3);
 }
 
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: #E897AA;
+}
+
+.modal-header {
+    padding: 25px 30px;
+    border-bottom: 2px solid #E897AA;
+    background-color: #f8f9fa;
+    border-radius: 16px 16px 0 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+/* Секция с фото */
+.modal-photo-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.photo-placeholder {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.order-photo {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.change-photo-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    background-color: rgba(232, 151, 170, 0.9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.change-photo-btn:hover {
+    background-color: #E897AA;
+    transform: translateY(-2px);
+}
+
+/* Две колонки с информацией */
+.modal-info-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.modal-left-column,
+.modal-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.modal-section {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.modal-section h3 {
+    color: #E897AA;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E897AA;
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-info p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #666;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 0 0 16px 16px;
+}
+
+.chat-button {
+    padding: 12px 30px;
+    background-color: #E897AA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.update-button {
+    margin-bottom: 20px;
+    margin-right: 5px;
+    padding: 12px 30px;
+    background-color: #E897AA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.chat-button:hover {
+    background-color: #d47b90;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 151, 170, 0.3);
+}
+
+.update-button:hover {
+    background-color: #d47b90;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 151, 170, 0.3);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Стили для строки заказа */
+.order-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.order-row:hover {
+    background-color: #fff5f7;
+}
+
+/* Стили для истории заказов клиента */
+.order-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.order-history-item:last-child {
+    border-bottom: none;
+}
+
+.order-history-id {
+    font-weight: 600;
+    color: #E897AA;
+    cursor: pointer;
+}
+
+.order-history-id:hover {
+    text-decoration: underline;
+}
+
+.order-history-date {
+    color: #666;
+    font-size: 13px;
+}
+
+.order-history-price {
+    font-weight: 600;
+    color: #333;
+}
+
+.client-id-header {
+    color: #E897AA;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Адаптивность для модалки */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-info-columns {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .modal-section h3 {
+        font-size: 16px;
+    }
+    
+    .info-label {
+        min-width: 70px;
+    }
+    
+    .order-photo {
+        max-height: 200px;
+    }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .settings-grid {
