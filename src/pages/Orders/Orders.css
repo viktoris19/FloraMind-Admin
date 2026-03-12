@@ -179,23 +179,12 @@
     color: #ffffff;
 }
 
-.order-photo-btn {
-    padding: 6px 12px;
-    background-color: transparent;
-    border: 1px solid #E897AA;
-    border-radius: 6px;
-    color: #E897AA;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
 .order-photo-btn:hover {
     background-color: #E897AA;
     color: white;
 }
 
-/* Нижняя навигация (как на скриншоте) */
+/* Нижняя навигация */
 .bottom-nav {
     display: flex;
     justify-content: center;
@@ -349,6 +338,33 @@
     cursor: pointer;
     transition: all 0.2s ease;
     margin-bottom: 4px;
+}
+
+.section-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.edit-section-btn {
+    padding: 8px 20px;
+    background-color: transparent;
+    color: #E897AA;
+    border: 1px solid #E897AA;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-section-btn:hover {
+    background-color: #E897AA;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(232, 151, 170, 0.2);
 }
 
 /* Альтернативный стиль с точками */

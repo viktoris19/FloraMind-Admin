@@ -93,7 +93,7 @@ const Dashboard = () => {
                             <button className='action-button' onClick={() => navigate('/Orders')}>
                                 Все заказы
                             </button> 
-                            <button className='action-button'>
+                            <button className='action-button' onCkick={() => navigate('/Orders')}>
                                 Параметры
                             </button> 
                             <button className='action-button'>
@@ -114,7 +114,6 @@ const Dashboard = () => {
                                 <th>Описание</th>
                                 <th>Сумма</th>
                                 <th>Статус</th>
-                                <th>Фото</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -138,9 +137,6 @@ const Dashboard = () => {
                                             <span className={`order-status order-status--${order.status === 'В сборке' ? 'v-sborke' : 'gotov'}`}>
                                                 {order.status}
                                             </span>
-                                        </td>
-                                        <td className='order-cell order-cell--action'>
-                                            <button className='order-photo-btn'>Фото</button>
                                         </td>
                                     </tr>
                                 ))}
