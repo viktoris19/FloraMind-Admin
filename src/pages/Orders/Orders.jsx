@@ -158,9 +158,6 @@ const Orders = () => {
 
                     <div className='tab-content' id='content-3'>
                         <SettingsGrid groups={settingsGroups} onEditGroup={handleEditGroup} />
-                        <div className='settings-footer'>
-                            <button className='add-button'>Добавить</button>
-                        </div>
                     </div>
                 </div>
             </div>
