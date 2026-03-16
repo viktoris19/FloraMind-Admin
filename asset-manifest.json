@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/FloraMind-Admin/static/css/main.48b5f0cd.css",
+    "main.js": "/FloraMind-Admin/static/js/main.e43822e1.js",
+    "static/media/flowers.png": "/FloraMind-Admin/static/media/flowers.dd4093e2e168b44ea8b9.png",
+    "index.html": "/FloraMind-Admin/index.html",
+    "main.48b5f0cd.css.map": "/FloraMind-Admin/static/css/main.48b5f0cd.css.map",
+    "main.e43822e1.js.map": "/FloraMind-Admin/static/js/main.e43822e1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48b5f0cd.css",
+    "static/js/main.e43822e1.js"
+  ]
+}
