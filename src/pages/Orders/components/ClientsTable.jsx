@@ -1,9 +1,63 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import './ClientsTable.css'
 
 const ClientsTable = ({ clients, onClientClick }) => {
+
+    const [sortOrder, setSortOrder] = useState('asc');
+    const [searchTerm, setSearchTerm] = useState('');
+    const [displayedClients, setDisplayedClients] = useState([]);
+
+    useEffect(() => {
+        let filtered = [...clients].filter(client => 
+            client.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            client.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            client.phone.includes(searchTerm)
+        );
+
+        const sorted = filtered.sort((a, b) => {
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
+            
+            if (sortOrder === 'asc') {
+                return nameA.localeCompare(nameB);
+            } else {
+                return nameB.localeCompare(nameA);
+            }
+        });
+
+        setDisplayedClients(sorted);
+        }, [clients, sortOrder, searchTerm]);
+
+         const toggleSort = () => {
+        setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
+    };
+
     return (
-        <div className='clients-table-container'>
+    <div className='clients-table-container'>
+        <div className='table-controls'>
+            <div className='sort-controls'>
+                <button 
+                    className={`sort-button ${sortOrder === 'asc' ? 'active' : ''}`}
+                    onClick={toggleSort}>
+                    Сортировка по имени {sortOrder === 'asc' ? '↑' : '↓'}
+                </button>
+            </div>
+            <div className='search-control'>
+                <input
+                    type='text'
+                    placeholder='🔍 Поиск по имени, email или телефону...'
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className='search-input'/>
+            </div>
+        </div>
+
+        <div className='table-stats'>
+            Найдено клиентов: {displayedClients.length}
+        </div>
+
             <table className='clients-table'>
                 <thead>
                     <tr className='table-header'>
@@ -13,7 +67,7 @@ const ClientsTable = ({ clients, onClientClick }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {clients.map((client) => (
+                    {displayedClients.map((client) => (
                         <tr 
                             key={client.id} 
                             className='client-row'
@@ -46,6 +100,11 @@ const ClientsTable = ({ clients, onClientClick }) => {
                     ))}
                 </tbody>
             </table>
+            {displayedClients.length === 0 && (
+                <div className='no-results'>
+                    Клиенты не найдены
+                </div>
+            )}
         </div>
     );
 };
